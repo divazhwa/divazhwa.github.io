@@ -1,124 +1,214 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Kreatif</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-}
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
 
-header {
-  background-color: #003366;
-  padding: 20px;
-}
+    header {
+      background-color: #003366;
+      padding: 20px;
+    }
 
-nav ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-}
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+    }
 
-nav ul li {
-  margin: 0 20px;
-}
+    nav ul li {
+      margin: 0 20px;
+    }
 
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
-}
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
 
-nav ul li a:hover {
-  color: #ff9900;
-}
+    nav ul li a:hover {
+      color: #ff9900;
+    }
 
-section {
-  padding: 50px 0;
-}
+    section {
+      padding: 50px 0;
+    }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
 
-h1, h2, h3 {
-  color: #003366;
-  text-align: center;
-}
+    h1, h2, h3 {
+      color: #003366;
+      text-align: center;
+    }
 
-#profile {
-  background-color: #e6f2ff;
-  text-align: center;
-}
+    #profile {
+      background-color: #e6f2ff;
+      text-align: center;
+    }
 
-#education ul {
-  list-style-type: none;
-  padding: 0;
-}
+    #education ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
-#education ul li {
-  font-size: 18px;
-  margin: 10px 0;
-}
+    #education ul li {
+      font-size: 18px;
+      margin: 10px 0;
+    }
 
-#portfolio {
-  background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+    #portfolio {
+      background-color: #ffffff;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-.portfolio-item {
-  background-color: #f1f1f1;
-  margin: 20px;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
+    .portfolio-item {
+      background-color: #f1f1f1;
+      margin: 20px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
 
-.portfolio-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
 
-.portfolio-item:hover {
-  transform: translateY(-10px);
-}
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+    }
 
-.portfolio-details {
-  margin-top: 15px;
-}
+    .portfolio-details {
+      margin-top: 15px;
+    }
 
-#contact {
-  background-color: #e6f2ff;
-}
+    #contact {
+      background-color: #e6f2ff;
+    }
 
-form input, form textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
 
-form button {
-  padding: 10px 20px;
-  background-color: #003366;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+    form button {
+      padding: 10px 20px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-form button:hover {
-  background-color: #ff9900;
-}
+    form button:hover {
+      background-color: #ff9900;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#profile">Profil</a></li>
+        <li><a href="#education">Pendidikan</a></li>
+        <li><a href="#portfolio">Portofolio</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Profil -->
+  <section id="profile">
+    <div class="container">
+      <h1>Halo, saya [Nama Anda]</h1>
+      <p>Seorang developer kreatif yang bersemangat dengan pengalaman di bidang web development dan desain UI/UX. Saya suka membangun aplikasi web yang menarik dan berfungsi dengan baik.</p>
+    </div>
+  </section>
+
+  <!-- Pendidikan -->
+  <section id="education">
+    <div class="container">
+      <h2>Pendidikan</h2>
+      <ul>
+        <li><strong>Universitas ABC</strong> - Sarjana Ilmu Komputer (2020-2024)</li>
+        <li><strong>Bootcamp XYZ</strong> - Full Stack Web Development (2022)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Portofolio -->
+  <section id="portfolio">
+    <div class="container">
+      <h2>Portofolio</h2>
+      <div class="portfolio-item">
+        <img src="images/screenshot1.png" alt="Aplikasi 1">
+        <div class="portfolio-details">
+          <h3>Aplikasi 1: ToDo List</h3>
+          <p>Tech Stack: HTML, CSS, JavaScript</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="images/screenshot2.png" alt="Aplikasi 2">
+        <div class="portfolio-details">
+          <h3>Aplikasi 2: E-commerce</h3>
+          <p>Tech Stack: React, Node.js, MongoDB</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact">
+    <div class="container">
+      <h2>Kontak</h2>
+      <p>Ingin bekerja sama atau memiliki pertanyaan? Hubungi saya!</p>
+      <form>
+        <input type="text" placeholder="Nama" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Pesan" required></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // Scroll effect for smooth navigation
+    document.querySelectorAll('a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
