@@ -1,214 +1,543 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Kreatif</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Ainur Diva Zahwa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Variabel Warna Dominan Biru */
+        :root {
+            --primary-color: #007BFF; /* Biru Cerah/Utama */
+            --secondary-color: #0056b3; /* Biru Gelap/Hover */
+            --accent-color: #6c757d; /* Abu-abu untuk teks sekunder */
+            --background-light: #f8f9fa; /* Background utama */
+            --background-dark: #212529; /* Background footer/gelap */
+            --text-light: #ffffff; /* Teks di background gelap */
+            --text-dark: #343a40; /* Teks di background terang */
+            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header {
-      background-color: #003366;
-      padding: 20px;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--background-light);
+            scroll-behavior: smooth; /* Interaktif: Scroll halus */
+        }
 
-    nav ul {
-      list-style-type: none;
-      display: flex;
-      justify-content: center;
-    }
+        /* --- Header & Navbar --- */
+        header {
+            background-color: var(--text-light);
+            box-shadow: var(--card-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    nav ul li {
-      margin: 0 20px;
-    }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
 
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
 
-    nav ul li a:hover {
-      color: #ff9900;
-    }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
 
-    section {
-      padding: 50px 0;
-    }
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-    .container {
-      width: 80%;
-      margin: 0 auto;
-    }
+        .nav-links li a:hover {
+            color: var(--primary-color);
+        }
 
-    h1, h2, h3 {
-      color: #003366;
-      text-align: center;
-    }
+        .btn-kontak {
+            background-color: var(--primary-color);
+            color: var(--text-light) !important;
+            border-radius: 5px;
+            padding: 0.5rem 1rem !important;
+            transition: background-color 0.3s;
+        }
 
-    #profile {
-      background-color: #e6f2ff;
-      text-align: center;
-    }
+        .btn-kontak:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-light) !important;
+        }
 
-    #education ul {
-      list-style-type: none;
-      padding: 0;
-    }
+        /* Burger Menu (untuk mobile) */
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
 
-    #education ul li {
-      font-size: 18px;
-      margin: 10px 0;
-    }
+        /* --- General Sections --- */
+        .content-section {
+            padding: 80px 5%;
+            text-align: center;
+        }
 
-    #portfolio {
-      background-color: #ffffff;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+        .content-section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
 
-    .portfolio-item {
-      background-color: #f1f1f1;
-      margin: 20px;
-      padding: 20px;
-      width: 300px;
-      text-align: center;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
+        .secondary-bg {
+            background-color: #e9ecef; /* Abu-abu muda untuk kontras */
+        }
 
-    .portfolio-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
+        /* --- Section Profile (Hero) --- */
+        .hero-section {
+            padding: 100px 5%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Interaktif: Gradient */
+            color: var(--text-light);
+        }
 
-    .portfolio-item:hover {
-      transform: translateY(-10px);
-    }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--text-light);
+            margin-bottom: 20px;
+        }
 
-    .portfolio-details {
-      margin-top: 15px;
-    }
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
 
-    #contact {
-      background-color: #e6f2ff;
-    }
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
 
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
+        .bio {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-weight: 400;
+        }
 
-    form button {
-      padding: 10px 20px;
-      background-color: #003366;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #ffc107; /* Kuning/Aksen */
+        }
 
-    form button:hover {
-      background-color: #ff9900;
-    }
-  </style>
+        /* --- Section Pendidikan & Organisasi (Timeline/List) --- */
+        .timeline, .organization-list {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .timeline-item, .organization-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: var(--text-light);
+            border-left: 5px solid var(--primary-color);
+            box-shadow: var(--card-shadow);
+            border-radius: 5px;
+            transition: transform 0.3s; /* Interaktif: Efek hover ringan */
+        }
+
+        .timeline-item:hover, .organization-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-item h3, .organization-item h3 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .period {
+            font-style: italic;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- Section Portofolio --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            background-color: var(--text-light);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.03); /* Interaktif: Zoom in */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-screenshot {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .item-body {
+            padding: 20px;
+        }
+
+        .item-body h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .tech-stack {
+            margin: 15px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .project-link {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-right: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .project-link:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .project-link.secondary {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        .project-link.secondary:hover {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .footer-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .footer-content p {
+            margin-bottom: 15px;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        .copyright .fas.fa-heart {
+            color: red;
+        }
+
+        /* --- Media Queries (Responsiveness) --- */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                padding: 1rem 5%;
+            }
+            
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 65px; /* Sesuaikan tinggi header */
+                background-color: var(--secondary-color);
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 0vh; /* Awalnya tersembunyi */
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+                overflow: hidden;
+            }
+
+            .nav-links li {
+                opacity: 0;
+                text-align: center;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            
+            .nav-links li a {
+                color: var(--text-light);
+            }
+
+            /* Menu Aktif */
+            .nav-active {
+                transform: translateX(0%);
+                height: auto;
+                min-height: 100vh;
+            }
+            .nav-active li {
+                opacity: 1;
+                transition: opacity 0.5s ease-in 0.2s;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animasi Burger */
+        .toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .toggle .line2 {
+            opacity: 0;
+        }
+        .toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#profile">Profil</a></li>
-        <li><a href="#education">Pendidikan</a></li>
-        <li><a href="#portfolio">Portofolio</a></li>
-        <li><a href="#contact">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Ainur Diva Zahwa</div>
+            <ul class="nav-links">
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#pendidikan">Pendidikan</a></li>
+                <li><a href="#organisasi">Organisasi</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#kontak" class="btn-kontak">Hubungi</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
 
-  <!-- Profil -->
-  <section id="profile">
-    <div class="container">
-      <h1>Halo, saya [Nama Anda]</h1>
-      <p>Seorang developer kreatif yang bersemangat dengan pengalaman di bidang web development dan desain UI/UX. Saya suka membangun aplikasi web yang menarik dan berfungsi dengan baik.</p>
-    </div>
-  </section>
+    <main>
+        <section id="profile" class="hero-section">
+            <div class="hero-content">
+                <img src="https://es.pinterest.com/cristinaroblesretratos/fotograf%C3%ADa-de-perfil-profesional/" alt="Foto Ainur Diva Zahwa" class="profile-photo">
+                <h1>Halo, Saya **Ainur Diva Zahwa**</h1>
+                <p class="tagline">Calon **Web Developer** Penuh Semangat | Mencari Kesempatan **Magang**</p>
+                <p class="bio">Mahasiswa semester akhir dengan fokus pada **Front-End Development** yang modern dan responsif. Bersemangat dalam mempelajari **teknologi baru** dan siap berkontribusi dalam tim yang dinamis. Saya memiliki kemampuan yang kuat dalam **HTML, CSS (Sass/Tailwind), dan JavaScript (React/Vue)**. Saya siap melamar magang dan membawa antusiasme serta etos kerja tinggi dalam setiap proyek.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://mail.google.com/mail/u/0/" target="_blank"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
 
-  <!-- Pendidikan -->
-  <section id="education">
-    <div class="container">
-      <h2>Pendidikan</h2>
-      <ul>
-        <li><strong>Universitas ABC</strong> - Sarjana Ilmu Komputer (2020-2024)</li>
-        <li><strong>Bootcamp XYZ</strong> - Full Stack Web Development (2022)</li>
-      </ul>
-    </div>
-  </section>
+        <section id="pendidikan" class="content-section">
+            <h2>Pendidikan</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>S1 Teknik Informatika</h3>
+                    <p class="institution">Universitas Teknologi Digital</p>
+                    <p class="period">2022 - Sekarang (IPK Terakhir: 3.85)</p>
+                    <p class="description">Fokus pada rekayasa perangkat lunak, sistem basis data, dan pengembangan web modern. Aktif dalam klub pemrograman kampus.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>SMA Negeri 1</h3>
+                    <p class="institution">Jurusan IPA</p>
+                    <p class="period">2019 - 2022</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="organisasi" class="content-section secondary-bg">
+            <h2>Pengalaman Organisasi</h2>
+            <div class="organization-list">
+                <div class="organization-item">
+                    <h3>Ketua Divisi Web Development</h3>
+                    <p class="institution">Unit Kegiatan Mahasiswa (UKM) IT Campus</p>
+                    <p class="period">2023 - 2024</p>
+                    <ul>
+                        <li>Memimpin tim yang terdiri dari 5 anggota dalam pengembangan dan pemeliharaan website resmi UKM.</li>
+                        <li>Mengadakan pelatihan *workshop* rutin mengenai teknologi *front-end* terbaru (ReactJS).</li>
+                    </ul>
+                </div>
+                <div class="organization-item">
+                    <h3>Staf Departemen Komunikasi</h3>
+                    <p class="institution">Badan Eksekutif Mahasiswa (BEM) Fakultas</p>
+                    <p class="period">2022 - 2023</p>
+                    <ul>
+                        <li>Bertanggung jawab atas desain dan publikasi visual untuk media sosial dan event.</li>
+                        <li>Berkontribusi dalam pengembangan *landing page* untuk acara besar fakultas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-  <!-- Portofolio -->
-  <section id="portfolio">
-    <div class="container">
-      <h2>Portofolio</h2>
-      <div class="portfolio-item">
-        <img src="images/screenshot1.png" alt="Aplikasi 1">
-        <div class="portfolio-details">
-          <h3>Aplikasi 1: ToDo List</h3>
-          <p>Tech Stack: HTML, CSS, JavaScript</p>
+        <section id="portofolio" class="content-section">
+            <h2>Portofolio Pembuatan Website</h2>
+            <p class="section-tagline">Berikut adalah dua contoh proyek web terbaik saya, menunjukkan kemampuan teknis dan desain.</p>
+            <div class="portfolio-grid">
+                
+                <div class="portfolio-item">
+                    <div class="item-header">
+                        <img src="[URL-SCREENSHOT-1]" alt="Screenshot Proyek E-Commerce Dummy" class="project-screenshot">
+                    </div>
+                    <div class="item-body">
+                        <h3>Aplikasi E-Commerce "Toko Serba Ada"</h3>
+                        <p class="description">Platform belanja daring yang responsif dengan fitur keranjang, sistem *checkout*, dan filter produk interaktif.</p>
+                        <div class="tech-stack">
+                            <span class="badge">ReactJS</span>
+                            <span class="badge">Redux</span>
+                            <span class="badge">Tailwind CSS</span>
+                            <span class="badge">Node.js (API Dummy)</span>
+                        </div>
+                        <a href="https://www.vidio.com/live/19473-live-breaking-news-situasi-terkini-demo-di-depan-gedung-dpr-ri" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Lihat Demo</a>
+                        <a href="https://github.com/new" target="_blank" class="project-link secondary"><i class="fab fa-github"></i> Kode Sumber</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                     <div class="item-header">
+                        <img src="[URL-SCREENSHOT-2]" alt="Screenshot Proyek Web Blog Pribadi" class="project-screenshot">
+                    </div>
+                    <div class="item-body">
+                        <h3>Web Blog Pribadi "Code & Coffee"</h3>
+                        <p class="description">Blog minimalis dan SEO-friendly untuk berbagi artikel teknologi. Dilengkapi sistem komentar sederhana.</p>
+                        <div class="tech-stack">
+                            <span class="badge">Vue.js</span>
+                            <span class="badge">HTML5</span>
+                            <span class="badge">SASS</span>
+                            <span class="badge">Firebase (Hosting & DB)</span>
+                        </div>
+                        <a href="https://www.reprise.com/resources/blog/what-is-a-live-demo" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Lihat Demo</a>
+                        <a href="https://github.com/orgs/github/repositories" target="_blank" class="project-link secondary"><i class="fab fa-github"></i> Kode Sumber</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    
+    <footer id="kontak">
+        <div class="footer-content">
+            <h3>Siap untuk Magang</h3>
+            <p>Saya mencari kesempatan magang di posisi **Front-End Developer** atau sejenisnya. Saya siap untuk belajar, beradaptasi cepat, dan memberikan nilai tambah pada tim Anda. Mari berkolaborasi!</p>
+            <p>Email: **ainur.diva.zahwa@email.com** | Telepon: **+62 812-XXXX-XXXX**</p>
+            <p class="copyright">&copy; 2025 Ainur Diva Zahwa. Dibuat dengan <i class="fas fa-heart"></i> dan Code.</p>
         </div>
-      </div>
-      <div class="portfolio-item">
-        <img src="images/screenshot2.png" alt="Aplikasi 2">
-        <div class="portfolio-details">
-          <h3>Aplikasi 2: E-commerce</h3>
-          <p>Tech Stack: React, Node.js, MongoDB</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Kontak -->
-  <section id="contact">
-    <div class="container">
-      <h2>Kontak</h2>
-      <p>Ingin bekerja sama atau memiliki pertanyaan? Hubungi saya!</p>
-      <form>
-        <input type="text" placeholder="Nama" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Pesan" required></textarea>
-        <button type="submit">Kirim</button>
-      </form>
-    </div>
-  </section>
+    <script>
+        // Interaktivitas: Navbar Mobile Toggle
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
 
-  <script>
-    // Scroll effect for smooth navigation
-    document.querySelectorAll('a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
+            burger.addEventListener('click', () => {
+                // Toggle Nav
+                nav.classList.toggle('nav-active');
+
+                // Toggle Animation Burger
+                burger.classList.toggle('toggle');
+
+                // Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        // Tunda sedikit untuk efek staggered
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+            });
+
+            // Menutup menu saat link di-klik (hanya pada mobile)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        nav.classList.remove('nav-active');
+                        burger.classList.remove('toggle');
+                        navLinks.forEach(link => {
+                            link.style.animation = ''; // Hapus animasi setelah ditutup
+                        });
+                    }
+                });
+            });
+        }
+
+        navSlide();
+        // Smooth Scrolling sudah diatur di CSS: scroll-behavior: smooth;
+    </script>
 </body>
 </html>
