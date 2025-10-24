@@ -1,290 +1,265 @@
-/* --------------------
-   Variabel CSS (Warna Tema)
--------------------- */
+/* Variabel Warna Dominan Biru */
 :root {
-    --primary-color: #38a169; /* Hijau Mint/Sage */
-    --secondary-color: #f6ad55; /* Kuning Oranye */
-    --text-dark: #2d3748;
-    --text-light: #4a5568;
-    --bg-light: #edf2f7; /* Background utama */
-    --bg-white: #ffffff;
-    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --primary-blue: #007bff; /* Biru Utama */
+    --dark-blue: #0056b3;    /* Biru Gelap untuk Hover */
+    --light-blue: #e9f5ff;   /* Biru Sangat Terang */
+    --text-color: #333;
+    --white: #ffffff;
 }
 
-/* --------------------
-   Reset & Dasar
--------------------- */
+/* Reset dan Dasar */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
+    /* BACKGROUND FOTO */
+    background: url('https://picsum.photos/1920/1080?random=1') no-repeat center center fixed; 
+    /* Ganti 'https://picsum.photos/1920/1080?random=1' dengan URL gambar Anda sendiri */
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    color: var(--text-color);
+    position: relative; /* Untuk overlay */
 }
 
-/* --------------------
-   Struktur Aplikasi
--------------------- */
-.kasir-app {
-    display: flex;
-    width: 95%;
-    max-width: 1400px;
-    height: 90vh;
+/* Overlay Gelap Transparan di atas Background Foto */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Overlay gelap 40% */
+    backdrop-filter: blur(5px); /* Efek blur pada background (modern) */
+    z-index: 1;
+}
+
+/* Container Utama Form Login */
+.login-container {
+    z-index: 2; /* Di atas overlay */
+    padding: 20px;
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Kotak Form Login */
+.login-box {
+    background: rgba(255, 255, 255, 0.95); /* Sedikit transparan */
+    padding: 40px;
     border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-/* --------------------
-   Panel Kiri: Produk
--------------------- */
-.product-panel {
-    flex: 2; /* Mengambil 2/3 dari lebar */
-    background-color: var(--bg-white);
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.panel-header {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.panel-header h2 {
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    background-color: #f7fafc;
-    border-radius: 8px;
-    padding: 8px 15px;
-    margin-top: 10px;
-}
-
-.search-box i {
-    color: var(--text-light);
-    margin-right: 10px;
-}
-
-.search-box input {
-    border: none;
-    outline: none;
-    background: transparent;
-    width: 100%;
-    font-size: 1rem;
-}
-
-/* Grid Produk */
-.product-grid {
-    flex-grow: 1;
-    overflow-y: auto; /* Agar bisa di-scroll jika produk banyak */
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
-    padding-right: 5px; /* Kompensasi scrollbar */
-}
-
-/* Card Produk */
-.product-card {
-    background-color: var(--bg-light);
-    border-radius: 10px;
-    padding: 15px;
-    cursor: pointer;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.2s, background-color 0.2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100px;
-}
-
-.product-card:hover {
-    transform: translateY(-3px);
-    background-color: #e2e8f0;
-}
-
-.product-card.special {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-}
-
-.product-card.special .product-price {
-    color: var(--secondary-color);
-}
-
-.product-name {
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-top: 5px;
-}
-
-.product-price {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--primary-color);
-}
-
-/* --------------------
-   Panel Kanan: Cart
--------------------- */
-.cart-panel {
-    flex: 1; /* Mengambil 1/3 dari lebar */
-    background-color: #fff;
-    border-left: 1px solid #e2e8f0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Daftar Item di Keranjang */
-.cart-items {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding-bottom: 20px;
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px dashed #e2e8f0;
-}
-
-.item-details {
-    display: flex;
-    align-items: center;
-}
-
-.item-qty {
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-right: 10px;
-}
-
-.item-name {
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.item-total {
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.remove-btn {
-    background: none;
-    border: none;
-    color: #e53e3e;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: color 0.2s;
-}
-
-.remove-btn:hover {
-    color: #c53030;
-}
-
-.empty-placeholder {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
-    color: var(--text-light);
-    padding: 40px 0;
-    margin-top: 50px;
 }
 
-.empty-placeholder i {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    color: #cbd5e0;
-}
-
-
-/* Ringkasan Total */
-.cart-summary {
-    padding-top: 20px;
-    border-top: 2px solid #e2e8f0;
-}
-
-.summary-line {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: var(--text-light);
-}
-
-.summary-line.total {
-    margin-top: 15px;
-}
-
-.total-label {
-    font-size: 1.2rem;
+.login-title {
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+    font-size: 2.2em;
     font-weight: 700;
-    color: var(--text-dark);
 }
 
-.total-amount {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #e53e3e; /* Merah untuk penekanan Total */
+.login-subtitle {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1em;
 }
 
-.checkout-btn {
+/* Grup Input */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px; /* Padding kiri untuk ikon */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.input-group .icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-blue);
+    font-size: 18px;
+}
+
+/* Tombol Login */
+.login-button {
     width: 100%;
     padding: 15px;
-    background-color: var(--primary-color);
-    color: var(--bg-white);
+    background: linear-gradient(45deg, var(--primary-blue), #00aaff); /* Gradien Biru */
+    color: var(--white);
     border: none;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1.1em;
     font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.login-button:hover {
+    background: linear-gradient(45deg, var(--dark-blue), #007acc);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Ingat Saya & Lupa Password */
+.remember-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+}
+
+.remember-me label {
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.forgot-password {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    color: var(--dark-blue);
+}
+
+/* Pemisah Login Sosial */
+.social-login-separator {
+    margin: 30px 0;
+    position: relative;
+    color: #999;
+}
+
+.social-login-separator span {
+    background: var(--white);
+    padding: 0 10px;
+    z-index: 10;
+    position: relative;
+}
+
+.social-login-separator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #ddd;
+    transform: translateY(-50%);
+}
+
+/* Tombol Login Sosial */
+.social-login {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-button {
+    flex-grow: 1;
+    padding: 12px;
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 1.2em;
+    text-decoration: none;
     transition: background-color 0.3s;
-    margin-top: 15px;
 }
 
-.checkout-btn:hover {
-    background-color: #2c7a52;
+.social-button i {
+    margin-right: 5px;
 }
 
-.checkout-btn i {
-    margin-right: 10px;
+.facebook {
+    background-color: #3b5998;
+}
+.facebook:hover {
+    background-color: #2d4373;
 }
 
-/* --------------------
-   Responsif Sederhana
--------------------- */
-@media (max-width: 900px) {
-    .kasir-app {
-        flex-direction: column;
-        height: auto;
-        width: 100%;
-        max-width: none;
-        box-shadow: none;
-        border-radius: 0;
+.google {
+    background-color: #db4437;
+}
+.google:hover {
+    background-color: #c33d31;
+}
+
+.twitter {
+    background-color: #1da1f2;
+}
+.twitter:hover {
+    background-color: #0c7abf;
+}
+
+/* Teks Pendaftaran */
+.register-text {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.register-text a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+/* ================================== */
+/* MEDIA QUERY UNTUK RESPONSIVITAS */
+/* ================================== */
+@media (max-width: 500px) {
+    .login-box {
+        padding: 30px 25px; /* Padding lebih kecil di layar kecil */
+        margin: 0 15px;
+    }
+
+    .login-title {
+        font-size: 1.8em;
+    }
+
+    .input-group input {
+        padding: 12px 12px 12px 40px;
     }
     
-    .product-panel, .cart-panel {
-        flex: 1;
-        width: 100%;
+    .login-button {
+        padding: 12px;
+        font-size: 1em;
     }
-
-    .cart-panel {
-        border-left: none;
-        border-top: 10px solid #cbd5e0; /* Pemisah jelas antara 2 panel */
+    
+    .social-login {
+        flex-direction: column; /* Tombol sosial berjejer ke bawah */
+    }
+    
+    .social-button {
+        padding: 10px;
+        font-size: 1em;
     }
 }
