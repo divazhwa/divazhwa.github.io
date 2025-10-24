@@ -3,118 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasir Sederhana</title>
+    <title>Login Modern | Biru</title>
     <link rel="stylesheet" href="kasir.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2 class="login-title"><i class="fas fa-lock"></i> Selamat Datang</h2>
+            <p class="login-subtitle">Masuk ke akun Anda</p>
+            
+            <form action="#" method="POST" class="login-form">
+                
+                <div class="input-group">
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" id="username" name="username" placeholder="Nama Pengguna" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-key icon"></i>
+                    <input type="password" id="password" name="password" placeholder="Kata Sandi" required>
+                </div>
+                
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Ingat Saya</label>
+                    <a href="#" class="forgot-password">Lupa Kata Sandi?</a>
+                </div>
+                
+                <button type="submit" class="login-button">MASUK</button>
+            </form>
+            
+            <div class="social-login-separator">
+                <span>Atau Masuk Dengan</span>
+            </div>
+            
+            <div class="social-login">
+                <a href="#" class="social-button facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-button google"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-button twitter"><i class="fab fa-twitter"></i></a>
+            </div>
 
-    <div class="kasir-app">
-        <div class="product-panel">
-            <header class="panel-header">
-                <h2>Katalog Produk</h2>
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Cari produk...">
-                </div>
-            </header>
-            
-            <div class="product-grid">
-                <div class="product-card">
-                    <span class="product-price">Rp 15.000</span>
-                    <p class="product-name">Kopi Latte Dingin</p>
-                </div>
-                <div class="product-card">
-                    <span class="product-price">Rp 25.000</span>
-                    <p class="product-name">Croissant Almond</p>
-                </div>
-                <div class="product-card special">
-                    <span class="product-price">Rp 30.000</span>
-                    <p class="product-name">Roti Tawar Gandum</p>
-                </div>
-                <div class="product-card">
-                    <span class="product-price">Rp 12.000</span>
-                    <p class="product-name">Air Mineral Besar</p>
-                </div>
-                <div class="product-card">
-                    <span class="product-price">Rp 45.000</span>
-                    <p class="product-name">Nasi Goreng Spesial</p>
-                </div>
-                 <div class="product-card">
-                    <span class="product-price">Rp 18.000</span>
-                    <p class="product-name">Teh Tarik Hangat</p>
-                </div>
-                 <div class="product-card">
-                    <span class="product-price">Rp 22.000</span>
-                    <p class="product-name">Kue Cokelat Mini</p>
-                </div>
-                 <div class="product-card special">
-                    <span class="product-price">Rp 65.000</span>
-                    <p class="product-name">Pizza Slice (Promo)</p>
-                </div>
-            </div>
-            
-        </div>
-        
-        <div class="cart-panel">
-            <header class="panel-header">
-                <h2>Daftar Belanja</h2>
-            </header>
-            
-            <div class="cart-items">
-                <div class="cart-item">
-                    <div class="item-details">
-                        <span class="item-qty">2x</span>
-                        <p class="item-name">Kopi Latte Dingin</p>
-                    </div>
-                    <span class="item-total">Rp 30.000</span>
-                    <button class="remove-btn"><i class="fas fa-times"></i></button>
-                </div>
-                
-                <div class="cart-item">
-                    <div class="item-details">
-                        <span class="item-qty">1x</span>
-                        <p class="item-name">Roti Tawar Gandum</p>
-                    </div>
-                    <span class="item-total">Rp 30.000</span>
-                    <button class="remove-btn"><i class="fas fa-times"></i></button>
-                </div>
-
-                <div class="cart-item">
-                    <div class="item-details">
-                        <span class="item-qty">3x</span>
-                        <p class="item-name">Air Mineral Besar</p>
-                    </div>
-                    <span class="item-total">Rp 36.000</span>
-                    <button class="remove-btn"><i class="fas fa-times"></i></button>
-                </div>
-                
-                <div class="empty-placeholder">
-                    <i class="fas fa-receipt"></i>
-                    <p>Pilih produk untuk memulai transaksi.</p>
-                </div>
-            </div>
-            
-            <div class="cart-summary">
-                <div class="summary-line">
-                    <span>Subtotal:</span>
-                    <span>Rp 96.000</span>
-                </div>
-                <div class="summary-line">
-                    <span>Diskon:</span>
-                    <span>Rp 0</span>
-                </div>
-                <div class="summary-line total">
-                    <span class="total-label">Total Pembayaran:</span>
-                    <span class="total-amount">Rp 96.000</span>
-                </div>
-                
-                <button class="checkout-btn">
-                    <i class="fas fa-cash-register"></i> PROSES PEMBAYARAN
-                </button>
-            </div>
+            <p class="register-text">Belum punya akun? <a href="#">Daftar Sekarang</a></p>
         </div>
     </div>
-
 </body>
 </html>
